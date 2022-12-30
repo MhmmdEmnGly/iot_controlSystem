@@ -111,7 +111,7 @@ app.get("/nem", (req, res) => {
 });
 
 
-const port =9000;
+const port =process.env.PORT || 9000;
 server.listen(port, () => console.log("App running on http://localhost:"+port));
 
 //--------------------------------------- FIREBASE SENSOR VERILERINI CEKME -----------------------------------------------------

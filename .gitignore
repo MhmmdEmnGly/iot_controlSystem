@@ -1,3 +1,7 @@
+node_modules
+firebaseCode.js
+server.js
+tester.js
 # OS generated files #
 ######################
 .DS_Store
