@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>MEG Webocket Tester</title>
+      <meta charset="utf-8">
+		<link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+		 <h1>Socket.io Demo</h1>	 
+		 <p id="buttonCount">The button has been clicked 0 times.</p>
+		
+		 
+
+	
+
+		 <button onclick="buttonClicked()">Motor On</button>
+		 <button onclick="buttonClickedClose()">Motor Off</button>
+
+    
+
+
+		 <p1 id ="motorStatus"><br> <br>Here is Show the Motor Status </p1>
+		 
+		 <script src="/socket.io/socket.io.js"></script>
+		 <script>
+			 var socket = io.connect();
+
+			 // timer koy 2 saniyeye ayarla
+			 
+			 // sadece fonksiyonu cagır 
+
+			 // timer dateTime ile saniye al.
+
+
+			 // ajax kodu 
+
+
+			
+			 
+			 function buttonClicked(){
+			   socket.emit('TurnOn');
+			 }
+
+			 function buttonClickedClose(){
+				socket.emit('TurnOff');
+			 }
+			 
+			 //when we receive numClients, do this
+			 socket.on('btnOn', function(data){
+				 document.getElementById("buttonCount").innerHTML = 'The button has been clicked ' + data.clickCount + ' times.';
+				 document.getElementById("motorStatus").innerHTML =  'Motor ' + (data.motorStatus ? 'ON' : 'OFF');
+				 
+				 //jquery ve ajax burda olacak
+				
+				});
+
+			socket.on('btnOff',function(data){
+				document.getElementById("motorStatus").innerHTML = 'Motor OFF'
+				document.getElementById("motorStatus").innerHTML =  'Motor ' + (data.motorStatus ? 'ON' : 'OFF')
+			})
+
+
+		</script>
+   </body>
+</html>
